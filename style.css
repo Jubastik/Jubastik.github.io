@@ -1,0 +1,203 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #ff9800, #ffa726);
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body.dark {
+  background: #363636e0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  transition: all 0.4s ease;
+  flex-direction: column;
+}
+
+.content.active {
+  margin-left: 300px;
+}
+
+.content>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.content>div:first-child .card {
+  height: 40rem;
+  width: 93rem;
+}
+
+.content.active>div:first-child .card {
+  width: 85rem;
+}
+
+.content>div:first-child .card>div {
+  height: 35rem;
+}
+
+.card {
+  height: 30rem;
+  width: 40rem;
+  position: relative;
+}
+
+.card>div {
+  height: 25rem;
+  transition: all 1.0s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.card>div:nth-child(1) {
+  background-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card>div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  background-color: #1c1c1c;
+  color: #000;
+}
+
+.card:hover>div:nth-child(1) {
+  transform: rotateY(-180deg);
+  color: #000;
+}
+
+.card:hover>div:nth-child(2) {
+  transform: rotateY(0deg);
+  color: #fff;
+}
+
+.btn_night_day>button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-right: 25px;
+  margin-top: 5px;
+  padding: 5px;
+  transform: rotate(40deg);
+  border-radius: .25rem;
+}
+
+.btn_night_day>button.active {
+  background: #ccccccdb;
+}
+
+.btn_night_day {
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 50px;
+  margin-top: 25px;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+  transition: all 0.4s ease;
+  width: 250px;
+  left: -250px;
+  background: #555555;
+}
+
+nav.active {
+  left: 0;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-top: 40px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 28px;
+  display: block;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#menu {
+  position: absolute;
+  right: -52px;
+  width: 52px;
+  top: 0;
+  height: 52px;
+  border: 3px solid #ccc;
+}
+
+@media (max-width: 1660px) {
+  .content.active {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1585px) {
+  .content>div:first-child .card>div, .content>div:first-child .card {
+    height: 30rem;
+  }
+
+  .content.active>div:first-child .card, .content>div:first-child .card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1350px) {
+  .card {
+    width: 48%;
+  }
+
+  .btn_night_day {
+    width: 95%;
+  }
+
+  .content.active {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .content>div {
+    flex-direction: column;
+  }
+
+  .content.active .card, .card, .content>div:first-child .card {
+    width: 95% !important;
+  }
+
+  .btn_night_day {
+    margin-right: 10px;
+  }
+}
