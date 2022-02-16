@@ -9,6 +9,30 @@ body {
   font-family: sans-serif;
 }
 
+.blue {
+  color: #29b6f6;
+}
+
+.green {
+  color: #9ccc65;
+}
+
+.purple {
+  color: #ba68c8;
+}
+
+.cyan {
+  color: #4dd0e1;
+}
+
+.red {
+  color: #ef5350;
+}
+
+.gray {
+  color: #8a919b;
+}
+
 body.dark {
   background: #363636e0;
 }
@@ -59,12 +83,19 @@ body.dark {
   top: 0;
   left: 0;
   margin: auto;
-  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 90%;
   backface-visibility: hidden;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
   color: #fff;
+}
+
+.card>div>img {
+  width: 9rem;
+  margin-right: 1rem;
 }
 
 .card>div:nth-child(1) {
